@@ -8,9 +8,19 @@ public class BitShifter {
 		
 		// 2. Print the value of numShifted, and convert that value to binary.
 		
+		System.out.println(numShifted);
+		
 		// 3. Compare the two binary values. Can you figure out what the << operator is for?
 		
+		System.out.println("4 in binary: 100");
+		System.out.println("8 in binary: 1000");
+		
+		
 		// 4. Try shifting num 3 places.
+		
+		num = 4;
+		numShifted = num << 3;
+		System.out.println(numShifted);
 		
 		// FYI: Binary values can be shifted to the right as well using the >> operator.	
 	}
