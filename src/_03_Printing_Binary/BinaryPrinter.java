@@ -9,6 +9,7 @@ public class BinaryPrinter {
 		new BinaryPrinter().printByteBinary((byte) 7);
 		new BinaryPrinter().printShortBinary((short) 7);
 		new BinaryPrinter().printIntBinary(7);
+		new BinaryPrinter().printLongBinary((long) 1000); 
 	}
 	
 	public void printByteBinary(byte b) {
@@ -36,12 +37,23 @@ public class BinaryPrinter {
 		String binaryStr = "";
 		for(int i = 0; i < 32; i++) {
 			binaryStr += (j&mask) >> (31-i);
-			mask = mask >> 1;
+			mask = mask >>> 1;
 		}
 		System.out.println(binaryStr);
 	}
 	
 	public void printLongBinary(long l) {
-		
+		int mask = 0b10000000000000000000000000000000;
+		String binaryStr = "";
+		for(int i = 32; i < 64; i++) {
+			binaryStr += (l&mask) >> (63-i);
+			mask = mask >>> 1;
+		}
+		mask = 0b10000000000000000000000000000000;
+		for(int i = 0; i < 32; i++) {
+			binaryStr += (l&mask) >> (31-i);
+			mask = mask >>> 1;
+		}
+		System.out.println(binaryStr);
 	}
 }
